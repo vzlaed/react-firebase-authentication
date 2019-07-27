@@ -30,7 +30,7 @@ class PasswordChangeForm extends Component {
     }
     
     onChange = event => {
-        this.setState({[event.target.name]: event.target})
+        this.setState({[event.target.name]: event.target.value})
     }
 
     render(){
@@ -43,12 +43,14 @@ class PasswordChangeForm extends Component {
             <form onSubmit = {this.onSubmit}>
                 <input 
                     name="passwordOne"
+                    type="password"
                     value={this.state.passwordOne}
                     onChange = {this.onChange}
                     placeholder ="New Password"
                 />
                 <input 
                     name="passwordTwo"
+                    type = "password"
                     value={this.state.passwordTwo}
                     onChange = {this.onChange}
                     placeholder ="Confirm New Password"

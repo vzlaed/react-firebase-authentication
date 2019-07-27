@@ -1,11 +1,13 @@
 import React from 'react'
+import {withAuthorization} from '../Session';
 
-const Home = () => {
-    return (
+const HomePage = () => (
         <div>
             <h1>Home</h1>
+            <p>The Home page can be access by any user</p>
         </div>
-    )
-}
+);
 
-export default Home
+const condition = authUser => !!authUser;
+
+export default withAuthorization(condition)(HomePage);
